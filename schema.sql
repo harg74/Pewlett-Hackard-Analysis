@@ -18,7 +18,7 @@ CREATE TABLE employees(
 );
 
 CREATE TABLE dept_manager (
-dept_no VARCHAR(4) NOT NULL,
+    dept_no VARCHAR(4) NOT NULL,
     emp_no INT NOT NULL,
     from_date DATE NOT NULL,
     to_date DATE NOT NULL,
@@ -59,3 +59,31 @@ CREATE TABLE title(
 	PRIMARY KEY (emp_no, title, from_date)
 	
 );
+
+
+-- MODULE: 7.3.1
+
+ALTER TABLE title 
+    ALTER COLUMN title TYPE VARCHAR;
+	
+SELECT * FROM title
+
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1952-01-01' AND '1955-12-31';
+
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1952-01-01' AND '1952-12-31';
+
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1953-01-01' AND '1953-12-31';
+
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1954-01-01' AND '1954-12-31';
+
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1955-01-01' AND '1955-12-31';
